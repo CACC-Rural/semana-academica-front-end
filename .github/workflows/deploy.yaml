@@ -47,8 +47,8 @@ jobs:
             export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
             [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
             cd /home/${{ secrets.SSH_USERNAME }}/deploys/${{ github.event.repository.name }}
-            rm -rf ./node_modules ./dist .env
+            rm -rf ./node_modules ./dist
             npm install
-            npm run build
+            NODE_ENV=production npm run build
             sudo rm -rf ${{ secrets.DEPLOY_FOLDER }}/*
             sudo rsync --ignore-times -a dist/ ${{ secrets.DEPLOY_FOLDER }}/

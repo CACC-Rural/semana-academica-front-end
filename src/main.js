@@ -1,5 +1,6 @@
+import './index.css';
+import 'flowbite';
 import { createApp } from 'vue';
-import './style.css';
 import VueCountdown from '@chenfengyuan/vue-countdown';
 import VueGtag from 'vue-gtag';
 import App from './App.vue';
