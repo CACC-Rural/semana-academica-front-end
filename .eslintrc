@@ -50,7 +50,8 @@
       ],
       "no-shadow": "warn",
       "no-use-before-define": "off",
-      "import/no-extraneous-dependencies": ["warn"]
+      "import/no-extraneous-dependencies": ["warn"],
+      "vue/no-reserved-component-names": "warn"
     },
     "parserOptions": {
       "ecmaVersion": 2022
