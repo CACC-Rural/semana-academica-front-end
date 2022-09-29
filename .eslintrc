@@ -49,10 +49,10 @@
         }
       ],
       "no-shadow": "warn",
-      "no-use-before-define": "off"
+      "no-use-before-define": "off",
+      "import/no-extraneous-dependencies": ["warn"]
     },
     "parserOptions": {
       "ecmaVersion": 2022
     }
   }
-  
