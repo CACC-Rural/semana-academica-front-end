@@ -1,8 +1,8 @@
 <template>
   <div id="app-container" class="flex flex-col m-0 child:mx-auto">
     <Header class="my-0 w-full z-10" />
-    <div class="!mx-0 relative -translate-y-[100px] -translate-x-[50px] md:h-[500px] md:w-3/5 sm:w-4/5 sm:h-[700px]">
-      <Window class="absolute left-0 top-0 p-36 px-36 z-10" style="height: 100%; width: 100%;">
+    <div class="!mx-0 relative sm:-translate-x-[50px] -translate-y-[100px] translate-x-0 lg:w-3/5 md:h-[600px] md:w-4/5 sm:w-6/7 sm:h-[600px] xs:h-[550px] h-[600px]">
+      <Window class="absolute left-0 top-0 p-36 sm:px-36 px-5 z-10 w-full h-full sm:text-left text-center">
         <div class="font-bold text-5xl mb-16">
           O que é a Computing  Together?
         </div>
@@ -16,24 +16,10 @@
         <img style="height: 300px; width: 300px;" src="./assets/sphere.png" alt="sphere">
       </div>
     </div>
-    <!-- <Window class="!mx-0 py-36 px-36 w-1/2">
-      <div class="font-bold text-5xl mb-16">
-        O que é a Computing  Together?
-      </div>
-      <div>
-        A Semana da Computação é o evento anual dos alunos do curso de Ciência da Computação da UFRRJ,
-        que se encontra em sua décima edição. Esse ano, nos dedicamos muito para trazer o melhor evento possível,
-        com foco em todos os detalhes. Trazemos atividades e convidados relevantes para que possam aproveitar ao máximo.
-      </div>
-      <div class="absolute top-1/2 -right-1/4 -z-10">
-        <img style="height: 300px; width: 300px;" src="./assets/sphere.png" alt="sphere">
-      </div>
-    </Window> -->
     <Partners />
-    <div class="mx-0 my-32 relative w-1/2" style="height: 400px;">
-      <Circle class="absolute left-0 top-0 -translate-y-1/2 -translate-x-1/2" :radius="150" />
-      <Window class="absolute left-0 top-0 p-20 z-10" style="height: 100%; width: 100%;">
-        <div class="font-bold text-4xl mb-16 text-center z-10">
+    <div class="mx-0 my-32 w-5/6 sm:w-1/2">
+      <Window class="sm:p-20 p-5" circle circle-size="150px">
+        <div class="font-bold text-4xl mb-8 sm:ms-16 text-center">
           Por que "Computing Together"?
         </div>
         <div>
@@ -42,7 +28,6 @@
           com foco em todos os detalhes. Trazemos atividades e convidados relevantes para que possam aproveitar ao máximo.
         </div>
       </Window>
-      <Circle class="absolute right-0 bottom-0 translate-y-1/2 translate-x-1/2" :radius="150" />
     </div>
     <Footer class="mt-20 w-full" />
   </div>
