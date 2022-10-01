@@ -1,14 +1,15 @@
+<!-- eslint-disable max-len -->
 <template>
   <div class="min-h-[50px] flex items-center justify-between p-4 text-sm">
     <img class="max-h-[50px]" src="../assets/logo.svg">
+    <Dropdown class="sm:hidden" :items="itens" />
     <ul
       class="
-        flex flex-wrap
+        hidden sm:flex
+        flex-wrap
         items-center
         sm:mt-0
         mt-3
-        sm:justify-center
-        md:justify-start
       "
     >
       <li v-for="item in itens" :key="item.name">
@@ -21,6 +22,8 @@
 </template>
 
 <script>
+import Dropdown from './Dropdown.vue';
+
 const itens = [
   {
     name: 'Sobre',
@@ -40,6 +43,9 @@ const itens = [
   },
 ];
 export default {
+  components: {
+    Dropdown,
+  },
   setup() {
     return {
       itens,

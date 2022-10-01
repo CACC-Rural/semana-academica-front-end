@@ -6,23 +6,23 @@
         <div class="font-bold text-5xl mb-16">
           O que é a Computing  Together?
         </div>
-        <div>
+        <div class="text-justify">
           A Semana da Computação é o evento anual dos alunos do curso de Ciência da Computação da UFRRJ,
           que se encontra em sua décima edição. Esse ano, nos dedicamos muito para trazer o melhor evento possível,
           com foco em todos os detalhes. Trazemos atividades e convidados relevantes para que possam aproveitar ao máximo.
         </div>
       </Window>
-      <div class="absolute inset-y-0 right-0 translate-x-1/2 translate-y-1/4">
+      <div class="absolute inset-y-0 right-0 translate-x-1/2 translate-y-1/4 sm:block hidden">
         <img style="height: 300px; width: 300px;" src="./assets/sphere.png" alt="sphere">
       </div>
     </div>
     <Partners />
-    <div class="mx-0 my-32 w-5/6 sm:w-1/2">
+    <div class="mx-0 my-32 w-5/6 sm:w-1/2 md:w-2/3 lg:w-1/2">
       <Window class="sm:p-20 p-5" circle circle-size="150px">
         <div class="font-bold text-4xl mb-8 sm:ms-16 text-center">
           Por que "Computing Together"?
         </div>
-        <div>
+        <div class="text-justify">
           A Semana da Computação é o evento anual dos alunos do curso de Ciência da Computação da UFRRJ,
           que se encontra em sua décima edição. Esse ano, nos dedicamos muito para trazer o melhor evento possível,
           com foco em todos os detalhes. Trazemos atividades e convidados relevantes para que possam aproveitar ao máximo.
@@ -56,5 +56,6 @@ export default {
   background-color: $background-color;
   color: $text-color;
   font-family: 'Roboto', sans-serif;
+  overflow-x: hidden;
 }
 </style>
