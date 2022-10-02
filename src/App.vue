@@ -17,6 +17,7 @@
       </div>
     </div>
     <Partners />
+    <Calendar class="sm:!mx-auto !mx-4 sm:max-h-none max-h-[400px] overflow-auto" />
     <div class="mx-0 my-32 w-5/6 sm:w-1/2 md:w-2/3 lg:w-1/2">
       <Window class="sm:p-20 p-5" circle circle-size="150px">
         <div class="font-bold text-4xl mb-8 sm:ms-16 text-center">
@@ -38,7 +39,7 @@ import Footer from './components/Footer.vue';
 import Header from './components/Header.vue';
 import Partners from './components/Partners.vue';
 import Window from './components/Window.vue';
-import Circle from './components/Circle.vue';
+import Calendar from './components/Calendar.vue';
 
 export default {
   components: {
@@ -46,7 +47,7 @@ export default {
     Header,
     Partners,
     Window,
-    Circle,
+    Calendar,
   },
 };
 </script>
