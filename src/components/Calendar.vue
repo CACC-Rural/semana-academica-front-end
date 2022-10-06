@@ -5,8 +5,8 @@
     </h1>
     <div class="grid grid-cols-1 sm:grid-cols-2">
       <div v-for="item in items" :key="item.weekday" class="grid grid-cols-3 grid-rows-1 gap-0 bg-white text-black rounded-md m-1">
-        <div class="px-4 py-2">
-          <div class="grid grid-cols-1 grid-rows-3 text-center w-10">
+        <div class="m-auto">
+          <div class="grid grid-cols-1 grid-rows-2 text-center w-10" :class="{'!grid-rows-3': isToday(item.date)}">
             <div class="font-bold text-lg">
               {{ getWeekday(item.date) }}
             </div>
@@ -16,12 +16,14 @@
             </div>
           </div>
         </div>
-        <div class="col-span-2 px-4 py-2">
+        <div class="col-span-2 px-4 py-2 w-60">
           <ul>
-            <li v-for="event in item.events" :key="event.name">
-              <span class="font-bold">{{ event.name }}</span>
-              <br>
-              <span class="text-gray-600">{{ event.starts }} - {{ event.ends }}</span>
+            <li v-for="(event, index) in item.events" :key="event.name" class="cursor-pointer pb-1 pt-1">
+              <div class="border-b-[1px] border-gray-300" :class="{'!border-0': index === item.events.length - 1}">
+                <span class="font-bold">{{ event.name }}</span>
+                <br>
+                <span class="text-gray-600">{{ event.starts }} - {{ event.ends }}</span>
+              </div>
             </li>
           </ul>
         </div>

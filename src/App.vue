@@ -17,7 +17,7 @@
       </div>
     </div>
     <Partners />
-    <Calendar class="sm:!mx-auto !mx-4 sm:max-h-none max-h-[400px] overflow-auto" />
+    <Calendar class="sm:!mx-auto !mx-4 overflow-auto" />
     <div class="mx-0 my-32 w-5/6 sm:w-1/2 md:w-2/3 lg:w-1/2">
       <Window class="sm:p-20 p-5" circle circle-size="150px">
         <div class="font-bold text-4xl mb-8 sm:ms-16 text-center">
