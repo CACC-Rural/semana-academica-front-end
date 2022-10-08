@@ -13,7 +13,7 @@
         </div>
       </Window>
       <div class="absolute inset-y-0 right-0 translate-x-1/2 translate-y-1/4 sm:block hidden">
-        <img style="height: 300px; width: 300px;" src="./assets/sphere.png" alt="sphere">
+        <img src="./assets/sphere.webp" alt="sphere" style="height: 300px; width: 300px;">
       </div>
     </div>
     <Partners />

@@ -60,7 +60,7 @@
               <DialogPanel>
                 <Window class="sm:p-20 p-5 pt-20 w-full max-w-2xl">
                   <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                    <img class="mx-auto h-32 w-32 rounded-full bg-black" :src="currentEvent.speakerImg">
+                    <img class="mx-auto h-32 w-32 rounded-full bg-black" loading="lazy" :src="currentEvent.speakerImg">
                   </div>
                   <div class="font-bold text-4xl mb-8 sm:ms-16 text-center">
                     {{ currentEvent.name }}
@@ -69,7 +69,7 @@
                     {{ currentEvent.description }}
                   </div>
                   <div class="pt-6">
-                    <img class="mx-auto" :src="currentEvent.companyImg">
+                    <img class="mx-auto" loading="lazy" :src="currentEvent.companyImg">
                   </div>
                 </Window>
               </DialogPanel>
