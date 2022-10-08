@@ -13,7 +13,7 @@
         :href="partner.link"
       >
         <img
-          class="contrast-0 hover:contrast-100"
+          class="md:contrast-0 hover:contrast-100 "
           loading="lazy"
           :alt="partner.name"
           :src="partner.img"
