@@ -1,8 +1,9 @@
 <template>
-  <div id="app-container" class="flex flex-col m-0 child:mx-auto">
-    <Header class="my-0 w-full z-10" />
+  <div id="app-container" class="flex flex-col m-0 child:mx-auto child:z-20">
+    <Header class="my-0 w-full" />
+    <!-- <RandomLine class="!z-auto" /> -->
     <div class="!mx-0 relative sm:-translate-x-[50px] -translate-y-[100px] translate-x-0 lg:w-3/5 md:h-[600px] md:w-4/5 sm:w-6/7 sm:h-[600px] xs:h-[550px] h-[600px]">
-      <Window class="absolute left-0 top-0 p-36 sm:px-36 px-5 z-10 w-full h-full sm:text-left text-center">
+      <Window class="absolute left-0 top-0 p-36 sm:px-36 px-5 w-full h-full sm:text-left text-center">
         <div class="font-bold text-5xl mb-16">
           O que é a Computing  Together?
         </div>
@@ -66,5 +67,7 @@ export default {
   color: $text-color;
   font-family: 'Roboto', sans-serif;
   overflow-x: hidden;
+  background-image: url(./assets/lines/line-1.svg);
+  background-repeat: repeat-y;
 }
 </style>
