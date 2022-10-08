@@ -30,6 +30,7 @@
         </div>
       </Window>
     </div>
+    <TwitchPlayer class="px-6 md:px-0" :autoplay="isDesktop" />
     <Footer class="mt-20 w-full" />
   </div>
 </template>
@@ -40,6 +41,7 @@ import Header from './components/Header.vue';
 import Partners from './components/Partners.vue';
 import Window from './components/Window.vue';
 import Calendar from './components/Calendar.vue';
+import TwitchPlayer from './components/TwitchPlayer.vue';
 
 export default {
   components: {
@@ -48,6 +50,12 @@ export default {
     Partners,
     Window,
     Calendar,
+    TwitchPlayer,
+  },
+  setup() {
+    return {
+      isDesktop: window.innerWidth > 720,
+    };
   },
 };
 </script>
