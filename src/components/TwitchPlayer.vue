@@ -1,5 +1,12 @@
 <template>
-  <div id="player" class="w-full max-w-4xl aspect-video" />
+  <div id="player" class="w-full max-w-4xl aspect-video">
+    <iframe
+      :src="`https://player.twitch.tv/?channel=${channel}&parent=${host}&muted=${muted}&autoplay=${autoplay}`"
+      height="100%"
+      width="100%"
+      loading="lazy"
+    />
+  </div>
 </template>
 
 <script>
@@ -9,16 +16,19 @@ export default {
       type: Boolean,
       default: false,
     },
+    muted: {
+      type: Boolean,
+      default: true,
+    },
+    channel: {
+      type: String,
+      default: 'gaules',
+    },
   },
-  mounted() {
-    const options = {
-      width: '100%',
-      height: '100%',
-      channel: 'gaules',
-      muted: true,
-      autoplay: this.autoplay,
+  setup() {
+    return {
+      host: location.host.split(':')[0],
     };
-    const player = new Twitch.Player('player', options);
   },
 };
 </script>

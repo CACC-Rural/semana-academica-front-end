@@ -1,7 +1,6 @@
 <template>
   <div id="app-container" class="flex flex-col m-0 child:mx-auto child:z-20">
-    <Header class="my-0 w-full" />
-    <!-- <RandomLine class="!z-auto" /> -->
+    <Header class="my-0 w-full !z-30" />
     <div class="!mx-0 relative sm:-translate-x-[50px] -translate-y-[100px] translate-x-0 lg:w-3/5 md:h-[600px] md:w-4/5 sm:w-6/7 sm:h-[600px] xs:h-[550px] h-[600px]">
       <Window class="absolute left-0 top-0 p-36 sm:px-36 px-5 w-full h-full sm:text-left text-center">
         <div class="font-bold text-5xl mb-16">
@@ -13,7 +12,7 @@
           com foco em todos os detalhes. Trazemos atividades e convidados relevantes para que possam aproveitar ao máximo.
         </div>
       </Window>
-      <div class="absolute inset-y-0 right-0 translate-x-1/2 translate-y-1/4 sm:block hidden">
+      <div v-if="!isMobile" class="absolute inset-y-0 right-0 translate-x-1/2 translate-y-1/4 sm:block hidden">
         <img src="./assets/sphere.webp" alt="sphere" style="height: 300px; width: 300px;">
       </div>
     </div>
@@ -37,6 +36,7 @@
 </template>
 
 <script>
+import { ref } from 'vue';
 import Footer from './components/Footer.vue';
 import Header from './components/Header.vue';
 import Partners from './components/Partners.vue';
@@ -55,8 +55,19 @@ export default {
   },
   setup() {
     return {
-      isDesktop: window.innerWidth > 720,
+      windowWidth: window.innerWidth,
+      isMobile: ref(window.innerWidth < 640),
+      isDesktop: ref(window.innerWidth > 720),
     };
+  },
+  computed: {
+  },
+  mounted() {
+    window.addEventListener('resize', () => {
+      this.windowWidth = window.innerWidth;
+      this.isMobile = window.innerWidth < 640;
+      this.isDesktop = window.innerWidth > 720;
+    });
   },
 };
 </script>
