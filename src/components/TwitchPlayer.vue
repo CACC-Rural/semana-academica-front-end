@@ -1,7 +1,8 @@
 <template>
-  <div id="player" class="w-full max-w-4xl aspect-video">
+  <div ref="container" class="w-full max-w-4xl aspect-video">
     <iframe
-      :src="`https://player.twitch.tv/?channel=${channel}&parent=${host}&muted=${muted}&autoplay=${autoplay}`"
+      v-show="isVisible"
+      ref="player"
       height="100%"
       width="100%"
       loading="lazy"
@@ -10,6 +11,8 @@
 </template>
 
 <script>
+import { ref } from 'vue';
+
 export default {
   props: {
     autoplay: {
@@ -28,7 +31,28 @@ export default {
   setup() {
     return {
       host: location.host.split(':')[0],
+      isVisible: ref(false),
     };
+  },
+  mounted() {
+    this.showPlayerWhenIntersected();
+  },
+  methods: {
+    showPlayerWhenIntersected() {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !this.isVisible) {
+            this.isVisible = true;
+            this.$refs.player.setAttribute('src', `https://player.twitch.tv/?channel=${this.channel}&parent=${this.host}&muted=${this.muted}&autoplay=${this.autoplay}`);
+          }
+        });
+      }, {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.75,
+      });
+      observer.observe(this.$refs.container);
+    },
   },
 };
 </script>
