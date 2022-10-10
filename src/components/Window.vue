@@ -32,7 +32,7 @@ export default {
   z-index: 1;
 }
 #window-container.circle::before {
-  opacity: 0.5;
+  opacity: 0.8;
   content: "";
   position: absolute;
   top: 0;
@@ -46,7 +46,7 @@ export default {
   z-index: -1;
 }
 #window-container.circle::after {
-  opacity: 0.5;
+  opacity: 0.8;
   content: "";
   position: absolute;
   bottom: 0;

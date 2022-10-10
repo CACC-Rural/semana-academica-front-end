@@ -78,7 +78,11 @@ export default {
   color: $text-color;
   font-family: 'Roboto', sans-serif;
   overflow-x: hidden;
-  background-image: url(./assets/lines/line-1.svg);
+  background-image: url(./assets/line-pattern.svg), url(./assets/fundo_colorido_site_ct.webp);
+  background-position: left top, left top;
   background-repeat: repeat-y;
+  @media screen and (min-width: 600px) {
+    background-size: contain;
+  }
 }
 </style>
