@@ -1,7 +1,7 @@
 <!-- eslint-disable max-len -->
 <template>
-  <Window class="px-4 py-4">
-    <h1 class="font-bold text-2xl">
+  <Window class="sm:px-4 px-0 py-3">
+    <h1 class="font-bold text-2xl text-center">
       Agenda
     </h1>
     <div class="grid grid-cols-1 sm:grid-cols-2">
@@ -17,13 +17,20 @@
             </div>
           </div>
         </div>
-        <div class="col-span-2 px-4 py-2 w-60">
+        <div class="col-span-2 px-4 py-2 sm:w-60 w-full">
           <ul>
             <li v-for="(event, index) in item.events" :key="event.name" class="cursor-pointer pb-1 pt-1" @click="openModal(event)">
               <div class="border-b-[1px] border-gray-300 hover:bg-gray-100 duration-200" :class="{'border-none': index === item.events.length - 1}">
-                <span class="font-bold">{{ event.name }}</span>
-                <br>
-                <span class="text-gray-600">{{ event.starts }} - {{ event.ends }}</span>
+                <div class="flex flex-row items-center ">
+                  <div>
+                    <span class="font-bold">{{ event.name }}</span>
+                    <br>
+                    <span class="text-gray-600">{{ event.starts }} - {{ event.ends }}</span>
+                  </div>
+                  <span class="ml-auto sm:mr-0 mr-1 w-3 h-3">
+                    <ArrowForwardIosFilled />
+                  </span>
+                </div>
               </div>
             </li>
           </ul>
@@ -88,6 +95,7 @@ import {
   Dialog,
   DialogPanel,
 } from '@headlessui/vue';
+import { ArrowForwardIosFilled } from '@vicons/material';
 import Window from './Window.vue';
 
 export default {
@@ -97,6 +105,7 @@ export default {
     TransitionChild,
     Dialog,
     DialogPanel,
+    ArrowForwardIosFilled,
   },
   setup() {
     const lorem = `
