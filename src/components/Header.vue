@@ -1,6 +1,6 @@
 <!-- eslint-disable max-len -->
 <template>
-  <div class="min-h-[50px] h-[50px] flex items-center justify-between p-4 text-sm">
+  <div class="min-h-[60px] h-[60px] flex items-center justify-between p-4 text-sm">
     <img class="max-h-[50px] h-[50px]" src="../assets/logo.svg">
     <Dropdown class="sm:hidden" :items="itens" />
     <ul

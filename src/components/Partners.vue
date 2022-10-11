@@ -1,5 +1,5 @@
 <template>
-  <div class="py-10 px-10">
+  <div class="pb-10 px-10">
     <h1 class="text-center text-4xl pb-5">
       Patrocinadores
     </h1>
