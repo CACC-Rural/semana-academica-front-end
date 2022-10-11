@@ -1,8 +1,7 @@
 <template>
   <div id="app-container" class="flex flex-col m-0 child:mx-auto child:z-20">
     <Header class="my-0 w-full !z-30 md:mb-20" />
-    <div
-      class="relative lg:w-3/5 md:h-[600px] -translate-y-[65px] md:w-4/5 sm:w-6/7 sm:h-[600px] xs:h-[500px] h-[600px]">
+    <div class="relative lg:w-3/5 md:h-[600px] -translate-y-[75px] md:w-4/5 sm:w-6/7 sm:h-[600px] xs:h-[500px] h-[600px]">
       <Window class="relative px-5 sm:px-10 md:px-20 w-full h-full text-center flex">
         <div class="m-auto">
           <div class="font-bold text-5xl mb-16">
