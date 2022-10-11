@@ -1,7 +1,7 @@
 <!-- eslint-disable max-len -->
 <template>
   <Window class="sm:px-4 px-0 py-3">
-    <h1 class="font-bold text-2xl text-center">
+    <h1 id="agenda" class="font-bold text-2xl text-center">
       Agenda
     </h1>
     <div class="grid grid-cols-1 sm:grid-cols-2">

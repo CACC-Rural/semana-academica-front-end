@@ -31,7 +31,7 @@ const itens = [
   },
   {
     name: 'Cronograma',
-    link: '#',
+    link: '#agenda',
   },
   {
     name: 'Contato',
