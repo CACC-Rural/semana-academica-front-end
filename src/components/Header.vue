@@ -13,7 +13,7 @@
       "
     >
       <li v-for="item in itens" :key="item.name">
-        <a :href="item.link" class="hover:underline mr-4 md:mr-6">{{
+        <a target="_blank" :href="item.link" class="hover:underline mr-4 md:mr-6">{{
           item.name
         }}</a>
       </li>

@@ -4,7 +4,7 @@
       <div v-for="column in columns" :key="column.name" class="first:pl-10 pr-20">
         <span class="font-bold">{{ column.name }}</span>
         <ul v-for="item in column.items" :key="item.name">
-          <a class=" hover:font-bold" :href="item.href">{{ item.name }}</a>
+          <a class="hover:font-bold" target="_blank" :href="item.href">{{ item.name }}</a>
         </ul>
       </div>
     </div>

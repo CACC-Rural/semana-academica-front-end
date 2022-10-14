@@ -22,7 +22,7 @@
     <Partners />
     <Calendar class="sm:!mx-auto !mx-4 overflow-auto" />
     <div class="mx-0 my-32 w-5/6 sm:w-1/2 md:w-2/3 lg:w-1/2">
-      <Window class="sm:p-20 p-5" circle circle-size="150px">
+      <Window class="sm:p-20 p-5" circle circle-size="150px" :circle-style="2">
         <div class="font-bold text-4xl mb-8 sm:ms-16 text-center">
           Por que "Computing Together"?
         </div>
@@ -36,12 +36,12 @@
     </div>
     <TwitchPlayer class="px-6 md:px-0" :autoplay="isDesktop" />
     <div class="child:my-3 sm:child:my-0 sm:py-6 py-3 child:mx-3 child:px-4 child:py-3 child:rounded-lg sm:child:inline-block child:cursor-pointer child:select-none child:h-[60px]">
-      <a href="https://www.twitch.tv/computingtogether" class="bg-[#a970ff] hover:bg-[#a970ff]/75 block">
+      <a href="https://www.twitch.tv/computingtogether" class="bg-[#a970ff] hover:bg-[#a970ff]/75 block" target="_blank">
         <div class="text-center">
           <img class="inline mr-3" width="40" src="./assets/twitch.svg">Assistir pela Twitch
         </div>
       </a>
-      <a href="https://www.youtube.com/channel/UCOvzRTmVw2kF_8LXysarV2Q" class="bg-[#ff0000] hover:bg-[#ff0000]/75 block">
+      <a href="https://www.youtube.com/channel/UCOvzRTmVw2kF_8LXysarV2Q" class="bg-[#ff0000] hover:bg-[#ff0000]/75 block" target="_blank">
         <div class="text-center">
           <img class="inline mr-3" width="40" src="./assets/youtube.svg">Assistir pelo YouTube
         </div>

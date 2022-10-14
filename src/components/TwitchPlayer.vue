@@ -49,7 +49,7 @@ export default {
       }, {
         root: null,
         rootMargin: '0px',
-        threshold: 0.75,
+        threshold: 0,
       });
       observer.observe(this.$refs.container);
     },

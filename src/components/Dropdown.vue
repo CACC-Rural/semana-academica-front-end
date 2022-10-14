@@ -30,7 +30,7 @@
             <a
               :href="item.link"
               :class="[active ? 'bg-blue-500 text-white' : 'text-gray-900']"
-              class="group flex w-full items-center rounded-md px-2 py-2 text-sm"
+              class="group flex w-full items-center rounded-md px-2 py-2 text-sm" target="_blank"
             >
               {{ item.name }}
             </a>
