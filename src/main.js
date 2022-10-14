@@ -5,6 +5,12 @@ import App from './App.vue';
 
 createApp(App)
   .use(VueGtag, {
-    config: { id: import.meta.env.VITE_ANALYTICS_METRIC_ID },
+    config: {
+      id: import.meta.env.VITE_ANALYTICS_METRIC_ID,
+      params: {
+        anonymize_ip: true,
+      },
+    },
+    enabled: !!import.meta.env.VITE_ANALYTICS_METRIC_ID,
   })
   .mount('#app');

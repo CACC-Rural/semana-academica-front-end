@@ -1,7 +1,7 @@
 <!-- eslint-disable max-len -->
 <template>
   <Window class="sm:px-4 px-0 py-3">
-    <h1 class="font-bold text-2xl text-center">
+    <h1 id="cronograma" class="font-bold text-2xl text-center">
       Agenda
     </h1>
     <div class="grid grid-cols-1 sm:grid-cols-2">
@@ -120,6 +120,7 @@ export default {
         date: '10/01/2022',
         events: [
           {
+            id: 1,
             name: 'Entrevista',
             starts: '09:30',
             ends: '10:30',
@@ -129,6 +130,7 @@ export default {
             companyImg,
           },
           {
+            id: 2,
             name: 'Apresentação',
             starts: '14:00',
             ends: '15:30',
@@ -143,6 +145,7 @@ export default {
         date: '10/02/2022',
         events: [
           {
+            id: 3,
             name: 'Entrevista',
             starts: '09:30',
             ends: '10:30',
@@ -152,6 +155,7 @@ export default {
             companyImg,
           },
           {
+            id: 4,
             name: 'Apresentação',
             starts: '14:00',
             ends: '15:30',
@@ -161,6 +165,7 @@ export default {
             companyImg,
           },
           {
+            id: 5,
             name: 'Apresentação',
             starts: '15:30',
             ends: '16:30',
@@ -175,6 +180,7 @@ export default {
         date: '10/03/2022',
         events: [
           {
+            id: 6,
             name: 'Entrevista',
             starts: '09:30',
             ends: '10:30',
@@ -184,6 +190,7 @@ export default {
             companyImg,
           },
           {
+            id: 7,
             name: 'Apresentação',
             starts: '14:00',
             ends: '15:30',
@@ -198,6 +205,7 @@ export default {
         date: '10/04/2022',
         events: [
           {
+            id: 8,
             name: 'Entrevista',
             starts: '09:30',
             ends: '10:30',
@@ -207,6 +215,7 @@ export default {
             companyImg,
           },
           {
+            id: 9,
             name: 'Apresentação',
             starts: '14:00',
             ends: '15:30',
@@ -216,6 +225,7 @@ export default {
             companyImg,
           },
           {
+            id: 10,
             name: 'Apresentação',
             starts: '15:30',
             ends: '16:30',
@@ -266,13 +276,17 @@ export default {
       this.showDetails = false;
     },
     openModal(event) {
+      this.trackCalendarClick(event);
       this.currentEvent = event;
       this.showDetails = true;
+    },
+    trackCalendarClick(event) {
+      this.$gtag.event('click', {
+        event_category: 'calendar',
+        event_label: 'details',
+        value: event.id,
+      });
     },
   },
 };
 </script>
-
-<style>
-
-</style>

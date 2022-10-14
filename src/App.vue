@@ -36,12 +36,12 @@
     </div>
     <TwitchPlayer class="px-6 md:px-0" :autoplay="isDesktop" />
     <div class="child:my-3 sm:child:my-0 sm:py-6 py-3 child:mx-3 child:px-4 child:py-3 child:rounded-lg sm:child:inline-block child:cursor-pointer child:select-none child:h-[60px]">
-      <a href="https://www.twitch.tv/computingtogether" class="bg-[#a970ff] hover:bg-[#a970ff]/75 block" target="_blank">
+      <a href="https://www.twitch.tv/computingtogether" class="bg-[#a970ff] hover:bg-[#a970ff]/75 block" target="_blank" @click="trackStreamClick('twitch')">
         <div class="text-center">
           <img class="inline mr-3" width="40" src="./assets/twitch.svg">Assistir pela Twitch
         </div>
       </a>
-      <a href="https://www.youtube.com/channel/UCOvzRTmVw2kF_8LXysarV2Q" class="bg-[#ff0000] hover:bg-[#ff0000]/75 block" target="_blank">
+      <a href="https://www.youtube.com/channel/UCOvzRTmVw2kF_8LXysarV2Q" class="bg-[#ff0000] hover:bg-[#ff0000]/75 block" target="_blank" @click="trackStreamClick('youtube')">
         <div class="text-center">
           <img class="inline mr-3" width="40" src="./assets/youtube.svg">Assistir pelo YouTube
         </div>
@@ -76,14 +76,25 @@ export default {
       isDesktop: ref(window.innerWidth > 720),
     };
   },
-  computed: {
-  },
   mounted() {
     window.addEventListener('resize', () => {
       this.windowWidth = window.innerWidth;
       this.isMobile = window.innerWidth < 640;
       this.isDesktop = window.innerWidth > 720;
     });
+  },
+  methods: {
+    trackStreamClick(name) {
+      const id = {
+        twitch: 1,
+        youtube: 2,
+      };
+      this.$gtag.event('click', {
+        event_category: 'stream',
+        event_label: 'button',
+        value: id[name] || 9999,
+      });
+    },
   },
 };
 </script>

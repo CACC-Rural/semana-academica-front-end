@@ -12,10 +12,10 @@
         mt-3
       "
     >
-      <li v-for="item in itens" :key="item.name">
-        <a target="_blank" :href="item.link" class="hover:underline mr-4 md:mr-6">{{
-          item.name
-        }}</a>
+      <li v-for="item in itens" :key="item.name" @click="trackHeaderClick(item)">
+        <a :target="item.target" :href="item.link" class="hover:underline mr-4 md:mr-6">
+          {{ item.name }}
+        </a>
       </li>
     </ul>
   </div>
@@ -26,20 +26,28 @@ import Dropdown from './Dropdown.vue';
 
 const itens = [
   {
+    id: 1,
+    name: 'Inscrição',
+    link: '#',
+    target: '_self',
+  },
+  {
+    id: 2,
     name: 'Sobre',
     link: '#',
+    target: '_self',
   },
   {
+    id: 3,
     name: 'Cronograma',
-    link: '#',
+    link: '#cronograma',
+    target: '_self',
   },
   {
-    name: 'Contato',
-    link: '#',
-  },
-  {
+    id: 4,
     name: 'Live',
     link: 'https://www.twitch.tv/computingtogether',
+    target: '_blank',
   },
 ];
 export default {
@@ -51,7 +59,13 @@ export default {
       itens,
     };
   },
+  methods: {
+    trackHeaderClick(item) {
+      this.$gtag.event('click', {
+        event_category: 'header',
+        value: item.id,
+      });
+    },
+  },
 };
 </script>
-
-<style scoped></style>
