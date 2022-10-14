@@ -35,6 +35,18 @@
       </Window>
     </div>
     <TwitchPlayer class="px-6 md:px-0" :autoplay="isDesktop" />
+    <div class="child:my-3 sm:child:my-0 sm:py-6 py-3 child:mx-3 child:px-4 child:py-3 child:rounded-lg sm:child:inline-block child:cursor-pointer child:select-none child:h-[60px]">
+      <a href="https://www.twitch.tv/computingtogether" class="bg-[#a970ff] hover:bg-[#a970ff]/75 block">
+        <div class="text-center">
+          <img class="inline mr-3" width="40" src="./assets/twitch.svg">Assistir pela Twitch
+        </div>
+      </a>
+      <a href="https://www.youtube.com/channel/UCOvzRTmVw2kF_8LXysarV2Q" class="bg-[#ff0000] hover:bg-[#ff0000]/75 block">
+        <div class="text-center">
+          <img class="inline mr-3" width="40" src="./assets/youtube.svg">Assistir pelo YouTube
+        </div>
+      </a>
+    </div>
     <Footer class="mt-20 w-full" />
   </div>
 </template>
