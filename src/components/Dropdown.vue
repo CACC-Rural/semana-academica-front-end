@@ -30,7 +30,8 @@
             <a
               :href="item.link"
               :class="[active ? 'bg-blue-500 text-white' : 'text-gray-900']"
-              class="group flex w-full items-center rounded-md px-2 py-2 text-sm" target="_blank"
+              class="group flex w-full items-center rounded-md px-2 py-2 text-sm" :target="item.target"
+              @click="trackHeaderClick(item)"
             >
               {{ item.name }}
             </a>
@@ -59,9 +60,13 @@ export default {
       required: true,
     },
   },
+  methods: {
+    trackHeaderClick(item) {
+      this.$gtag.event('click', {
+        event_category: 'header',
+        value: item.id,
+      });
+    },
+  },
 };
 </script>
-
-<style>
-
-</style>
