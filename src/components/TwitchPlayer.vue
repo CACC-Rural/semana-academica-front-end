@@ -1,5 +1,5 @@
 <template>
-  <div ref="container" class="w-full max-w-4xl aspect-video">
+  <div id="twitch-player" ref="container" class="w-full max-w-4xl aspect-video">
     <iframe
       v-show="isVisible"
       ref="player"
@@ -25,7 +25,7 @@ export default {
     },
     channel: {
       type: String,
-      default: 'gaules',
+      default: 'computingtogether',
     },
   },
   setup() {

@@ -19,17 +19,22 @@ const columns = [
       {
         id: 1,
         name: 'Instagram',
-        href: '#',
+        href: 'https://www.facebook.com/caccimufrrj/',
       },
       {
         id: 2,
         name: 'Linkedin',
-        href: '#',
+        href: 'https://www.linkedin.com/company/caccufrrj/',
       },
       {
         id: 3,
         name: 'Twitter',
-        href: '#',
+        href: 'https://twitter.com/computingtogether',
+      },
+      {
+        id: 4,
+        name: 'GitHub',
+        href: 'https://github.com/CACC-Rural',
       },
     ],
   },

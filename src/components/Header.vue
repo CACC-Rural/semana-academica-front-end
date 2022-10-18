@@ -13,7 +13,7 @@
       "
     >
       <li v-for="item in itens" :key="item.name" @click="trackHeaderClick(item)">
-        <a :target="item.target" :href="item.link" class="hover:underline mr-4 md:mr-6">
+        <a :target="item.target" :href="item.link" class="hover:underline mr-4 md:mr-6 hover:font-medium">
           {{ item.name }}
         </a>
       </li>
@@ -32,12 +32,6 @@ const itens = [
     target: '_self',
   },
   {
-    id: 2,
-    name: 'Sobre',
-    link: '#',
-    target: '_self',
-  },
-  {
     id: 3,
     name: 'Cronograma',
     link: '#cronograma',
@@ -46,8 +40,8 @@ const itens = [
   {
     id: 4,
     name: 'Live',
-    link: 'https://www.twitch.tv/computingtogether',
-    target: '_blank',
+    link: '#twitch-player',
+    target: '_self',
   },
 ];
 export default {
