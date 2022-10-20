@@ -21,27 +21,17 @@
     </div>
     <Partners />
     <Calendar class="sm:!mx-auto !mx-4 overflow-auto" />
-    <div class="mx-0 my-32 w-5/6 sm:w-1/2 md:w-2/3 lg:w-1/2">
-      <Window class="sm:p-20 p-5" circle circle-size="150px" :circle-style="2">
-        <div class="font-bold text-4xl mb-8 sm:ms-16 text-center">
-          Por que "Computing Together"?
-        </div>
-        <div class="text-justify">
-          A Semana da Computação é o evento anual dos alunos do curso de Ciência da Computação da UFRRJ,
-          que se encontra em sua décima edição. Esse ano, nos dedicamos muito para trazer o melhor evento possível,
-          com foco em todos os detalhes. Trazemos atividades e convidados relevantes para que possam aproveitar ao
-          máximo.
-        </div>
-      </Window>
+    <div id="maratona" class="mx-0 my-32 w-5/6 sm:w-1/2 md:w-2/3 lg:w-1/2">
+      <Maratona :links="links" />
     </div>
     <TwitchPlayer class="px-6 md:px-0" :autoplay="isDesktop" />
     <div class="child:my-3 sm:child:my-0 sm:py-6 py-3 child:mx-3 child:px-4 child:py-3 child:rounded-lg sm:child:inline-block child:cursor-pointer child:select-none child:h-[60px]">
-      <a href="https://www.twitch.tv/computingtogether" class="bg-[#a970ff] hover:bg-[#a970ff]/75 block" target="_blank" @click="trackStreamClick('twitch')">
+      <a :href="links.twitch" class="bg-[#a970ff] hover:bg-[#a970ff]/75 block" target="_blank" @click="trackStreamClick('twitch')">
         <div class="text-center">
           <img class="inline mr-3" width="40" src="./assets/twitch.svg">Assistir pela Twitch
         </div>
       </a>
-      <a href="https://www.youtube.com/channel/UCOvzRTmVw2kF_8LXysarV2Q" class="bg-[#ff0000] hover:bg-[#ff0000]/75 block" target="_blank" @click="trackStreamClick('youtube')">
+      <a :href="links.youtube" class="bg-[#ff0000] hover:bg-[#ff0000]/75 block" target="_blank" @click="trackStreamClick('youtube')">
         <div class="text-center">
           <img class="inline mr-3" width="40" src="./assets/youtube.svg">Assistir pelo YouTube
         </div>
@@ -59,6 +49,7 @@ import Partners from './components/Partners.vue';
 import Window from './components/Window.vue';
 import Calendar from './components/Calendar.vue';
 import TwitchPlayer from './components/TwitchPlayer.vue';
+import Maratona from './components/Maratona.vue';
 
 export default {
   components: {
@@ -68,12 +59,22 @@ export default {
     Window,
     Calendar,
     TwitchPlayer,
+    Maratona,
   },
   setup() {
     return {
       windowWidth: window.innerWidth,
       isMobile: ref(window.innerWidth < 640),
       isDesktop: ref(window.innerWidth > 720),
+      links: {
+        youtube: 'https://www.youtube.com/channel/UCOvzRTmVw2kF_8LXysarV2Q',
+        twitch: 'https://www.twitch.tv/computingtogether',
+        maratona: {
+          geral: '#',
+          calouros: '#',
+        },
+        maratonou: 'https://www.instagram.com/maratonou.ruralrj/',
+      },
     };
   },
   mounted() {

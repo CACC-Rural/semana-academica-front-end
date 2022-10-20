@@ -24,22 +24,7 @@
 </template>
 
 <script>
-const partners = [
-  {
-    name: 'Netlify',
-    img: 'https://viteconf.org/images/logos/netlify.svg',
-    link: 'https://www.netlify.com/',
-  },
-];
-
-const count = 10;
-for (let i = 0; i < count; i++) {
-  partners.push({
-    name: 'Netlify',
-    img: 'https://viteconf.org/images/logos/netlify.svg',
-    link: 'https://www.netlify.com/',
-  });
-}
+import { partners } from '../content';
 
 export default {
   setup() {

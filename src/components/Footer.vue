@@ -1,49 +1,20 @@
 <template>
-  <div class="bg-black/25 py-3 shadow-black">
-    <div class="flex flex-row">
-      <div v-for="column in columns" :key="column.name" class="first:pl-10 pr-20">
-        <span class="font-bold">{{ column.name }}</span>
-        <ul v-for="item in column.items" :key="item.name" @click="trackFooterClick(item)">
-          <a class="hover:font-bold" target="_blank" :href="item.href">{{ item.name }}</a>
-        </ul>
-      </div>
-    </div>
+  <div class="bg-black/25 shadow-black p-4 md:p-5 rounded-lg flex">
+    <ul class="flex flex-wrap items-center text-sm text-gray-100 mx-auto">
+      <li v-for="item in items" :key="item.name" @click="trackFooterClick(item)">
+        <a class="mr-4 hover:underline md:mr-6 hover:font-bold" target="_blank" :href="item.href">{{ item.name }}</a>
+      </li>
+    </ul>
   </div>
 </template>
 
 <script>
-const columns = [
-  {
-    name: 'Nossas Redes',
-    items: [
-      {
-        id: 1,
-        name: 'Instagram',
-        href: 'https://www.facebook.com/caccimufrrj/',
-      },
-      {
-        id: 2,
-        name: 'Linkedin',
-        href: 'https://www.linkedin.com/company/caccufrrj/',
-      },
-      {
-        id: 3,
-        name: 'Twitter',
-        href: 'https://twitter.com/computingtogether',
-      },
-      {
-        id: 4,
-        name: 'GitHub',
-        href: 'https://github.com/CACC-Rural',
-      },
-    ],
-  },
-];
+import { footerItems as items } from '../content';
 
 export default {
   setup() {
     return {
-      columns,
+      items,
     };
   },
   methods: {
@@ -56,4 +27,3 @@ export default {
   },
 };
 </script>
-
